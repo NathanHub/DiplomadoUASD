@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Explorando_ASP.NET_MVC_5_Prac3.Models.Persona>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>Lista de Personas</h2>
+    <div>
+        @{ var grid = new WebGrid(Model, defaultSort: "Apellido");}
+
+        @grid.GetHtml(columns: grid.Columns(
+            grid.Column("ID", header:"ID"),
+            grid.Column("Nombre", header:"Nombre"),
+            grid.Column("Apellido", header:"Apellido"),
+            grid.Column("DocumentoIdentidad", header:"DocumentoIdentidad"),
+            grid.Column("Sexo", header:"Sexo"),
+            grid.Column("Direccion", header:"Direccion")
+       ))
+    </div>
+</body>
+</html>
