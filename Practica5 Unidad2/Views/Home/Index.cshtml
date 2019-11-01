@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Listado de Peliculas";
+}
+
+@model IEnumerable<Practica5Unidad2.Models.Pelicula>
+
+
+<table>
+    <tr>
+        <th>
+            Titulo
+        </th>
+        <th></th>
+
+        <th>
+            Director
+        </th>
+        <th></th>
+
+        <th>
+            Actor Principal
+        </th>
+        <th></th>
+
+        <th>
+            Numero Actores
+        </th>
+        <th></th>
+
+        <th>
+            Duracion
+        </th>
+        <th></th>
+
+        <th>
+            Año Estreno
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <th></th>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <th></th>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorPrincipal)
+            </td>
+            <th></th>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroActores)
+            </td>
+            <th></th>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracion)
+            </td>
+            <th></th>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.AnioEstreno)
+            </td>
+            <th></th>
+        </tr>
+    }
+</table>
+
